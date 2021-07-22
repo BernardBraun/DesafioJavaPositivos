@@ -1,0 +1,27 @@
+/*
+Aqui segue uma das possíveis soluções
+*/
+
+import java.util.ArrayList; //é importante utilizar a classe do ArrayList para criar um array junto com os positivos.
+import java.util.Scanner; //Esta classe serve para que o sistema possa scannear os números solicitados.
+
+public class Desafio {
+    public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
+        int count = 0;
+
+
+        ArrayList<Float> positivos = new ArrayList<>(); //foi criado o array onde serão inseridos os números positivos
+        while (count < 6) {
+            Float x = leitor.nextFloat();
+            if (x > 0) { //cuidado ao montar este if, pois se ele for montado com >= ele erra nos testes privados
+                positivos.add(x);
+                System.out.println(x + " foi adicionado ao array");
+            }
+            count++;
+        }
+        Integer totalPositivos = positivos.size(); //aqui ele coleta o tamanho do array após a inserção dos números positivos
+        System.out.println(totalPositivos + " valores positivos"); // aqui ele faz a print necessária no desafio
+
+    }
+}
